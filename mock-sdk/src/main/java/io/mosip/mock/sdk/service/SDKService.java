@@ -1209,6 +1209,8 @@ public abstract class SDKService {
 				delayTime = Integer.parseInt(delayMs);
 			}
 		}
+
+		LOGGER.info("Delay Time is ", delayTime);
 		return delayTime;
 	}
 }
