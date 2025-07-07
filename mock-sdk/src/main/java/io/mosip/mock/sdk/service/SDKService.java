@@ -1194,4 +1194,21 @@ public abstract class SDKService {
 		}			
 		return isCheckISOTimestampFormat;
 	}
+
+	protected int getDelayTime()
+	{
+		int delayTime = 0;
+		if (getEnv() != null) {
+			delayTime = getEnv().getProperty(SdkConstant.SDK_RESPONSE_DELAY_TIME_IN_MS, Integer.class, 0);
+		}
+
+		if (getFlags() != null) {
+			if (getFlags().containsKey(SdkConstant.SDK_RESPONSE_DELAY_TIME_IN_MS)) {
+				String delayMs = getFlags().get(SdkConstant.SDK_RESPONSE_DELAY_TIME_IN_MS)
+						.toLowerCase();
+				delayTime = Integer.parseInt(delayMs);
+			}
+		}
+		return delayTime;
+	}
 }
