@@ -170,7 +170,7 @@ public class ProxyAbisInsertServiceImpl implements ProxyAbisInsertService {
 					responseHeader.get("Set-Cookie").get(0).toString().indexOf(";")));
 
 			HttpEntity<String> entity1 = new HttpEntity<String>(headers1);
-			ResponseEntity<String> cbeffResp = restTemplate.exchange(CBEFF_URL, HttpMethod.GET, entity1, String.class).getBody();
+			ResponseEntity<String> cbeffResp = restTemplate.exchange(CBEFF_URL, HttpMethod.GET, entity1, String.class);
 			logger.info("CBEFF response-" + cbeffResp);
 			String cbeff = cbeffResp.getBody();
 			logger.info("CBEFF Data-" + cbeff);
