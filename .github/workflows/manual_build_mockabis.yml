@@ -1,10 +1,6 @@
 name: Manual build for mock-abis 
 
-on:
-  push:
-    branches:
-      - master
-      - 1.*
+on: workflow_dispatch
   
 jobs:
   build:
