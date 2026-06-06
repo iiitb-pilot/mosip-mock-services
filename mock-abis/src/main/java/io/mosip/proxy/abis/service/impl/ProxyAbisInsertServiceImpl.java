@@ -172,7 +172,8 @@ public class ProxyAbisInsertServiceImpl implements ProxyAbisInsertService {
 			HttpEntity<String> entity1 = new HttpEntity<String>(headers1);
 			String cbeff = restTemplate.exchange(CBEFF_URL, HttpMethod.GET, entity1, String.class).getBody();
 
-			String cbf=cryptoUtil.decryptCbeff(cbeff);
+			//String cbf=cryptoUtil.decryptCbeff(cbeff);
+			String cbf=cbeff;
 			
 			//BIRType birType = CbeffValidator.getBIRFromXML(IOUtils.toByteArray(cbeff));
 			BIRType birType = CbeffValidator.getBIRFromXML(IOUtils.toByteArray(cbf));
