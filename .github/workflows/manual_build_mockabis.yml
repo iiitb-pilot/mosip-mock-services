@@ -16,6 +16,11 @@ jobs:
         server-id: ossrh
         settings-path: ${{ github.workspace }}
 
+    - name: Setup branch and GPG public key 
+      run: |
+        echo "BRANCH_NAME=$(echo ${{ github.ref }} | sed -e 's,.*/\(.*\),\1,')" >> $GITHUB_ENV
+        echo ${{ env.BRANCH_NAME }}
+        
     - uses: actions/cache@v4
       with:
         path: ~/.m2/repository
