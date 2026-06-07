@@ -228,8 +228,8 @@ public class ProxyAbisInsertServiceImpl implements ProxyAbisInsertService {
 			BIR birType = null;
 			try {
 				birType = CbeffValidator.getBIRFromXML(IOUtils.toByteArray(cbeff));
-				birType.setBirs(
-						birType.getBirs().stream().filter(b -> b.getBdb() != null).collect(Collectors.toList()));
+				//birType.setBirs(
+				//		birType.getBirs().stream().filter(b -> b.getBdb() != null).collect(Collectors.toList()));
 			} catch (Exception ex) {
 				logger.error("Error while validating CBEFF", ex);
 				throw new RequestException(FailureReasonsConstants.INVALID_CBEFF_FORMAT);
@@ -252,27 +252,16 @@ public class ProxyAbisInsertServiceImpl implements ProxyAbisInsertService {
 			logger.info("Valid CBEFF data");
 			logger.info("Inserting biometric details to concerned table {} ", birType.getBirs().size());
 
-			for (BIR bir : birType.getBirs()) {
-				if (bir.getBdb() != null && bir.getBdb().length > 0) {
-					BiometricData bd = new BiometricData();
-					bd.setType(bir.getBdbInfo().getType().iterator().next().value());
-					if (bir.getBdbInfo() == null)
-						throw new RequestException(FailureReasonsConstants.CBEFF_HAS_NO_DATA);
+			for (BIRType type : birType.getBIR()) {
 
-					if (bir.getBdbInfo().getSubtype() != null && !bir.getBdbInfo().getSubtype().isEmpty())
-						bd.setSubtype(bir.getBdbInfo().getSubtype().toString());
+				BiometricData bd = new BiometricData();
+				bd.setType(type.getBDBInfo().getType().iterator().next().value());
+				if (type.getBDBInfo().getSubtype() != null && type.getBDBInfo().getSubtype().size() >0)
+					bd.setSubtype(type.getBDBInfo().getSubtype().toString());
+				bd.setBioData(getSHA(new String(type.getBDB())));
+				bd.setInsertEntity(ie);
 
-					if ((bir.getBdb() == null || bir.getBdb().length <= 0))
-						throw new RequestException(FailureReasonsConstants.CBEFF_HAS_NO_DATA);
-
-					String hash = getSHAFromBytes(bir.getBdb());
-					bd.setBioData(hash);
-					bd.setInsertEntity(ie);
-
-					lst.add(bd);
-				} else {
-					throw new RequestException(FailureReasonsConstants.CBEFF_HAS_NO_DATA);
-				}
+				lst.add(bd);
 			}
 		} catch (HttpClientErrorException ex) {
 			logger.error("issue with httpclient URL ", ex);
