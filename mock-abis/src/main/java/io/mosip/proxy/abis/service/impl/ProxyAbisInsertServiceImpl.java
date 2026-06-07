@@ -175,8 +175,8 @@ public class ProxyAbisInsertServiceImpl implements ProxyAbisInsertService {
 			String cbeff = cbeffResp.getBody();
 			logger.info("CBEFF Data-" + cbeff);
 			
-			String cbf=cryptoUtil.decryptCbeff(cbeff);
-			//String cbf=cbeff;
+			//String cbf=cryptoUtil.decryptCbeff(cbeff);
+			String cbf=cbeff;
 			logger.info("CBEFF Data - cbf " + cbf);
 			logger.info("CBEFF Data - IOUtils.toByteArray(cbf) " + IOUtils.toByteArray(cbf));
 			
