@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:11-jre
 
 # label to be assigned along with  Docker build [Mandatory]
 ARG SOURCE
