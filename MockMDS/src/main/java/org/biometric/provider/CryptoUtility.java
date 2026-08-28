@@ -173,43 +173,28 @@ public class CryptoUtility {
 		generator.init(AES_KEY_LENGTH, random);
 		return generator.generateKey();
 	}
-	
+
 	public static byte[] asymmetricEncrypt(PublicKey key, byte[] data) throws Exception {
-		
+
 		Cipher cipher = Cipher.getInstance(asymmetricAlgorithm);
-		
+
 		final OAEPParameterSpec oaepParams = new OAEPParameterSpec(HASH_ALGO, MGF1, MGF1ParameterSpec.SHA256,
 				PSpecified.DEFAULT);
 		cipher.init(Cipher.ENCRYPT_MODE, key, oaepParams);
 		return doFinal(data, cipher);
 	}
- 
-	public static byte[] asymmetricDecrypt(PrivateKey key, byte[] data)  throws Exception {
-	
-		Cipher cipher = Cipher.getInstance(RSA_ECB_NO_PADDING);
-		cipher.init(Cipher.DECRYPT_MODE, key);
-	
-		byte[] paddedPlainText = doFinal(data, cipher);
-		if (paddedPlainText.length < asymmetricKeyLength / 8) {
-			byte[] tempPipe = new byte[asymmetricKeyLength / 8];
-			System.arraycopy(paddedPlainText, 0, tempPipe, tempPipe.length - paddedPlainText.length,
-					paddedPlainText.length);
-			paddedPlainText = tempPipe;
-		}
-		final OAEPParameterSpec oaepParams = new OAEPParameterSpec(HASH_ALGO, MGF1, MGF1ParameterSpec.SHA256,
-				PSpecified.DEFAULT);
-		return unpadOEAPPadding(paddedPlainText, oaepParams);
+
+	public static byte[] asymmetricDecrypt(PrivateKey key, byte[] data) throws Exception {
+
+		final OAEPParameterSpec oaepParams = new OAEPParameterSpec(
+				HASH_ALGO, MGF1, MGF1ParameterSpec.SHA256, PSpecified.DEFAULT);
+
+		Cipher cipher = Cipher.getInstance(asymmetricAlgorithm); // instead of "RSA/ECB/OAEPPadding"
+		cipher.init(Cipher.DECRYPT_MODE, key, oaepParams);
+
+		return doFinal(data, cipher);
 	}
 
-	
-	private static byte[] unpadOEAPPadding(byte[] paddedPlainText, OAEPParameterSpec paramSpec) throws Exception{
-		byte[] unpaddedData = null;
-		sun.security.rsa.RSAPadding padding = sun.security.rsa.RSAPadding.getInstance(
-				sun.security.rsa.RSAPadding.PAD_OAEP_MGF1, asymmetricKeyLength / 8, new SecureRandom(), paramSpec);
-		unpaddedData = padding.unpad(paddedPlainText);
-		return unpaddedData;
-	}
-	
 	private static byte[] doFinal(byte[] data, Cipher cipher) throws Exception {
 		return cipher.doFinal(data);
 	}

@@ -37,35 +37,35 @@ public class SBIFingerSingleBioExceptionInfo extends SBIBioExceptionInfo {
 			for (String tag : bioException){
 				switch (tag.trim ())
 				{
-					case SBIConstant.BIO_NAME_RIGHT_THUMB:
-						setChkMissingRightThumb (SBICheckState.Checked);
-						break;
-	                case SBIConstant.BIO_NAME_RIGHT_INDEX:
-	                	setChkMissingRightIndex (SBICheckState.Checked);
-						break;
-	                case SBIConstant.BIO_NAME_RIGHT_MIDDLE:
-	                	setChkMissingRightMiddle (SBICheckState.Checked);
-						break;
-	                case SBIConstant.BIO_NAME_RIGHT_RING:
-	                	setChkMissingRightRing (SBICheckState.Checked);
-						break;
-	                case SBIConstant.BIO_NAME_RIGHT_LITTLE:
-	                	setChkMissingRightLittle (SBICheckState.Checked);
-						break;
-	                case SBIConstant.BIO_NAME_LEFT_THUMB:
-	                	setChkMissingLeftThumb (SBICheckState.Checked);
-						break;
 	                case SBIConstant.BIO_NAME_LEFT_INDEX:
 	                	setChkMissingLeftIndex (SBICheckState.Checked);
+						break;
+					case SBIConstant.BIO_NAME_RIGHT_INDEX:
+						setChkMissingRightIndex (SBICheckState.Checked);
 						break;
 	                case SBIConstant.BIO_NAME_LEFT_MIDDLE:
 	                	setChkMissingLeftMiddle (SBICheckState.Checked);
 						break;
+					case SBIConstant.BIO_NAME_RIGHT_MIDDLE:
+						setChkMissingRightMiddle (SBICheckState.Checked);
+						break;
 	                case SBIConstant.BIO_NAME_LEFT_RING:
 	                	setChkMissingLeftRing (SBICheckState.Checked);
 						break;
+					case SBIConstant.BIO_NAME_RIGHT_RING:
+						setChkMissingRightRing (SBICheckState.Checked);
+						break;
 	                case SBIConstant.BIO_NAME_LEFT_LITTLE:
 	                	setChkMissingLeftLittle (SBICheckState.Checked);
+						break;
+					case SBIConstant.BIO_NAME_RIGHT_LITTLE:
+						setChkMissingRightLittle (SBICheckState.Checked);
+						break;
+					case SBIConstant.BIO_NAME_LEFT_THUMB:
+						setChkMissingLeftThumb (SBICheckState.Checked);
+						break;
+					case SBIConstant.BIO_NAME_RIGHT_THUMB:
+						setChkMissingRightThumb (SBICheckState.Checked);
 						break;
 				}
 			}

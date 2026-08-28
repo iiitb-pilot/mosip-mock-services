@@ -75,22 +75,152 @@ public class SBIFingerSingleCaptureInfo extends SBICaptureInfo {
   
 	@Override
 	public void initCaptureInfo() {
-		setImage (null);
-		setLiveStreamStarted (false);
-		setLiveStreamCompleted (false);
-		setCaptureStarted (false);
-		setCaptureCompleted (false);	
-		setBioExceptionInfo (new SBIFingerSingleBioExceptionInfo ());
+		setImage(null);
+		setLiveStreamStarted(false);
+		setLiveStreamCompleted(false);
+		setCaptureStarted(false);
+		setCaptureCompleted(false);
+		setBioExceptionInfo(new SBIFingerSingleBioExceptionInfo());
+
+		// Reset Left Index
+		setBioValueLI(null);
+		setBioSubTypeLI(null);
+		setRequestScoreLI(0);
+		setCaptureScoreLI(0);
+		setCaptureLI(false);
+
+		// Reset Right Index
+		setBioValueRI(null);
+		setBioSubTypeRI(null);
+		setRequestScoreRI(0);
+		setCaptureScoreRI(0);
+		setCaptureRI(false);
+
+		// Reset Left Middle
+		setBioValueLM(null);
+		setBioSubTypeLM(null);
+		setRequestScoreLM(0);
+		setCaptureScoreLM(0);
+		setCaptureLM(false);
+
+		// Reset Right Middle
+		setBioValueRM(null);
+		setBioSubTypeRM(null);
+		setRequestScoreRM(0);
+		setCaptureScoreRM(0);
+		setCaptureRM(false);
+
+		// Reset Left Ring
+		setBioValueLR(null);
+		setBioSubTypeLR(null);
+		setRequestScoreLR(0);
+		setCaptureScoreLR(0);
+		setCaptureLR(false);
+
+		// Reset Right Ring
+		setBioValueRR(null);
+		setBioSubTypeRR(null);
+		setRequestScoreRR(0);
+		setCaptureScoreRR(0);
+		setCaptureRR(false);
+
+		// Reset Left Little
+		setBioValueLL(null);
+		setBioSubTypeLL(null);
+		setRequestScoreLL(0);
+		setCaptureScoreLL(0);
+		setCaptureLL(false);
+
+		// Reset Right Little
+		setBioValueRL(null);
+		setBioSubTypeRL(null);
+		setRequestScoreRL(0);
+		setCaptureScoreRL(0);
+		setCaptureRL(false);
+
+		// Reset Left Thumb
+		setBioValueLT(null);
+		setBioSubTypeLT(null);
+		setRequestScoreLT(0);
+		setCaptureScoreLT(0);
+		setCaptureLT(false);
+
+		// Reset Right Thumb
+		setBioValueRT(null);
+		setBioSubTypeRT(null);
+		setRequestScoreRT(0);
+		setCaptureScoreRT(0);
+		setCaptureRT(false);
 	}
 
 	@Override
 	public void deInitCaptureInfo() {
-		setImage (null);
-		setLiveStreamStarted (false);
-		setLiveStreamCompleted (false);
-		setCaptureStarted (false);
-		setCaptureCompleted (false);
-		setBioExceptionInfo (null);
+		setImage(null);
+		setLiveStreamStarted(false);
+		setLiveStreamCompleted(false);
+		setCaptureStarted(false);
+		setCaptureCompleted(false);
+		setBioExceptionInfo(null);
+
+		setBioValueLI(null);
+		setBioSubTypeLI(null);
+		setRequestScoreLI(0);
+		setCaptureScoreLI(0);
+		setCaptureLI(false);
+
+		setBioValueRI(null);
+		setBioSubTypeRI(null);
+		setRequestScoreRI(0);
+		setCaptureScoreRI(0);
+		setCaptureRI(false);
+
+		setBioValueLM(null);
+		setBioSubTypeLM(null);
+		setRequestScoreLM(0);
+		setCaptureScoreLM(0);
+		setCaptureLM(false);
+
+		setBioValueRM(null);
+		setBioSubTypeRM(null);
+		setRequestScoreRM(0);
+		setCaptureScoreRM(0);
+		setCaptureRM(false);
+
+		setBioValueLR(null);
+		setBioSubTypeLR(null);
+		setRequestScoreLR(0);
+		setCaptureScoreLR(0);
+		setCaptureLR(false);
+
+		setBioValueRR(null);
+		setBioSubTypeRR(null);
+		setRequestScoreRR(0);
+		setCaptureScoreRR(0);
+		setCaptureRR(false);
+
+		setBioValueLL(null);
+		setBioSubTypeLL(null);
+		setRequestScoreLL(0);
+		setCaptureScoreLL(0);
+		setCaptureLL(false);
+
+		setBioValueRL(null);
+		setBioSubTypeRL(null);
+		setRequestScoreRL(0);
+		setCaptureScoreRL(0);
+		setCaptureRL(false);
+
+		setBioValueLT(null);
+		setBioSubTypeLT(null);
+		setRequestScoreLT(0);
+		setCaptureScoreLT(0);
+		setCaptureLT(false);
+
+		setBioValueRT(null);
+		setBioSubTypeRT(null);
+		setRequestScoreRT(0);
+		setCaptureScoreRT(0);
+		setCaptureRT(false);
 	}
 
 	public String getBioValueLT() {

@@ -45,7 +45,32 @@ public class SBIConstant {
     public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_LEFT  	= 1;	// LEFT SLAP IMAGE
     public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_RIGHT 	= 2;	// RIGHT SLAP IMAGE
     public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_THUMB  = 3;// TWO THUMB IMAGE
+	public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_LEFT_INDEX   = 4;
+	public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_RIGHT_INDEX  = 5;
+	public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_LEFT_MIDDLE  = 6;
+	public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_RIGHT_MIDDLE = 7;
+	public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_LEFT_RING    = 8;
+	public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_RIGHT_RING   = 9;
+	public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_LEFT_LITTLE  = 10;
+	public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_RIGHT_LITTLE = 11;
+	public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_LEFT_THUMB   = 12;
+	public final static int DEVICE_FINGER_SLAP_SUB_TYPE_ID_RIGHT_THUMB  = 13;
     public final static int DEVICE_FACE_SUB_TYPE_ID_FULLFACE  	= 0;    // TWO THUMB IMAGE
+
+	/** Individual Finger Single Device SubType IDs */
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_LEFT  	= 1;	// LEFT SLAP IMAGE
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_RIGHT 	= 2;	// RIGHT SLAP IMAGE
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_THUMB  = 3;//
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_LEFT_INDEX   = 4;
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_RIGHT_INDEX  = 5;
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_LEFT_MIDDLE  = 6;
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_RIGHT_MIDDLE = 7;
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_LEFT_RING    = 8;
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_RIGHT_RING   = 9;
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_LEFT_LITTLE  = 10;
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_RIGHT_LITTLE = 11;
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_LEFT_THUMB   = 12;
+	public final static int DEVICE_FINGER_SINGLE_SUB_TYPE_ID_RIGHT_THUMB  = 13;
     
 	/** Bio Exceptions/Bio Subtype Names */
 	public final static String BIO_NAME_UNKNOWN = "UNKNOWN";
@@ -252,9 +277,22 @@ public class SBIConstant {
 	public static String MOSIP_FINGER_SINGLE_DIGITALID_JSON = "mosip.mock.sbi.file.finger.single.digitalid.json";
 	public static String MOSIP_FINGER_SINGLE_DEVICEINFO_JSON = "mosip.mock.sbi.file.finger.single.deviceinfo.json";
 	public static String MOSIP_FINGER_SINGLE_DEVICEDEISCOVERYINFO_JSON = "mosip.mock.sbi.file.finger.single.devicediscovery.json";
+
 	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_LEFT_HAND = "mosip.mock.sbi.file.finger.single.streamimage.left";
 	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_RIGHT_HAND = "mosip.mock.sbi.file.finger.single.streamimage.right";
 	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_THUMBS = "mosip.mock.sbi.file.finger.single.streamimage.thumb";
+
+	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_LEFT_INDEX = "mosip.mock.sbi.file.finger.single.streamimage.left.index";
+	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_RIGHT_INDEX = "mosip.mock.sbi.file.finger.single.streamimage.right.index";
+	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_LEFT_MIDDLE = "mosip.mock.sbi.file.finger.single.streamimage.left.middle";
+	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_RIGHT_MIDDLE = "mosip.mock.sbi.file.finger.single.streamimage.right.middle";
+	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_LEFT_RING = "mosip.mock.sbi.file.finger.single.streamimage.left.ring";
+	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_RIGHT_RING = "mosip.mock.sbi.file.finger.single.streamimage.right.ring";
+	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_LEFT_LITTLE = "mosip.mock.sbi.file.finger.single.streamimage.left.little";
+	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_RIGHT_LITTLE = "mosip.mock.sbi.file.finger.single.streamimage.right.little";
+	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_LEFT_THUMB = "mosip.mock.sbi.file.finger.single.streamimage.left.thumb";
+	public static String MOSIP_STREAM_FINGER_SINGLE_SUBID_RIGHT_THUMB = "mosip.mock.sbi.file.finger.single.streamimage.right.thumb";
+
 	public static String MOSIP_STREAM_FINGER_SINGLE_KEYSTORE_FILE_NAME = "mosip.mock.sbi.file.finger.single.keys.keystorefilename";
 	public static String MOSIP_STREAM_FINGER_SINGLE_KEY_ALIAS = "mosip.mock.sbi.file.finger.single.keys.keyalias";
 	public static String MOSIP_STREAM_FINGER_SINGLE_KEYSTORE_PWD = "mosip.mock.sbi.file.finger.single.keys.keystorepwd";
